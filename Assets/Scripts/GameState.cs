@@ -18,7 +18,7 @@ public class GameState : MonoBehaviour {
 
 		if (UnityEngine.SceneManagement.SceneManager.GetActiveScene ().name == "world1") {
 			GameState.Instance.maxAsteroid = 10;
-		} else if (UnityEngine.SceneManagement.SceneManager.GetActiveScene ().name == "Scene2") {
+		} else if (UnityEngine.SceneManagement.SceneManager.GetActiveScene ().name == "world2") {
 			GameState.Instance.maxAsteroid = 18;
 		}
 	}
