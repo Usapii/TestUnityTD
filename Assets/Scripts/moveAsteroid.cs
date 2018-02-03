@@ -30,14 +30,16 @@ public class moveAsteroid : MonoBehaviour {
 			movement = GetComponent<Rigidbody2D>().position= new Vector2((rightBottomCameraBorder.x + sz/2),Random.Range(rightBottomCameraBorder.y+sz/2 ,leftTopCameraBorder.y-sz/2));
 		}
 
+		Debug.Log (GameState.Instance.getMaxAst());
 		if (GameObject.FindGameObjectsWithTag("asteroid").Length < GameState.Instance.getMaxAst() && Random.Range(0,100)==90){
 			GameObject ast = Instantiate (Resources.Load("asteroid"), new Vector3(rightBottomCameraBorder.x+sz/2,Random.Range(rightBottomCameraBorder.y+sz/2 ,leftTopCameraBorder.y-sz/2),0),Quaternion.identity) as GameObject;
 		}
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {
+		Debug.Log (other.name);
 		if (other.name == "Bullet" || other.name == "Ship" ){
-			if (other.name == "ship") {	GameState.Instance.addMaxAst(2);}
+			if (other.name == "Ship") {	GameState.Instance.addMaxAst(2);}
 			float sz= GetComponent<CircleCollider2D>().radius;
 			GameObject ast = Instantiate (Resources.Load("asteroid"), new Vector3(rightBottomCameraBorder.x+sz/2,Random.Range(rightBottomCameraBorder.y+sz/2 ,leftTopCameraBorder.y-sz/2),0),Quaternion.identity) as GameObject;
 			Destroy (gameObject);

@@ -1,11 +1,13 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/MoveShip.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/SavePreferencies.cs">
     <Files>
-      <File FileName="Assets/Scripts/posShip.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/moveAsteroid.cs" Line="30" Column="4" />
-      <File FileName="Assets/Scripts/MoveShip.cs" Line="31" Column="26" />
-      <File FileName="Assets/Scripts/movBullet.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/posShip.cs" Line="6" Column="2" />
+      <File FileName="Assets/Scripts/moveAsteroid.cs" Line="43" Column="54" />
+      <File FileName="Assets/Scripts/MoveShip.cs" Line="17" Column="2" />
+      <File FileName="Assets/Scripts/movBullet.cs" Line="35" Column="48" />
+      <File FileName="Assets/Scripts/GameState.cs" Line="36" Column="21" />
+      <File FileName="Assets/Scripts/SavePreferencies.cs" Line="9" Column="37" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
