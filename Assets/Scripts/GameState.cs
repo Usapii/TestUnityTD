@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameState : MonoBehaviour {
 
@@ -25,7 +26,6 @@ public class GameState : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
 	}
 
 	public int  getMaxAst(){
@@ -34,5 +34,12 @@ public class GameState : MonoBehaviour {
 
 	public void addMaxAst(int a){
 		this.maxAsteroid += a;
+	}
+	public void delMaxAst(int a){
+		if (UnityEngine.SceneManagement.SceneManager.GetActiveScene ().name == "world1" && this.maxAsteroid>8) {
+			this.maxAsteroid -= a;
+		} else if (UnityEngine.SceneManagement.SceneManager.GetActiveScene ().name == "world2" && this.maxAsteroid>11) {
+			this.maxAsteroid -= a;
+		}
 	}
 }

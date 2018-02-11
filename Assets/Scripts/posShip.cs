@@ -22,9 +22,14 @@ public class posShip : MonoBehaviour {
 
 		if (pos.y>rightTopCameraBorder.y-sz.y/2){
 			comp.position= new Vector2(pos.x,rightTopCameraBorder.y-sz.y/2);
-		}
-		if (pos.y<leftBottomCameraBorder.y+sz.y/2){
+		}else if (pos.y<leftBottomCameraBorder.y+sz.y/2){
 			comp.position= new Vector2 (pos.x,leftBottomCameraBorder.y+sz.y/2);
+		}
+
+		if (pos.x<leftBottomCameraBorder.x+sz.x/2){
+			comp.position= new Vector2(leftBottomCameraBorder.x+sz.x/2,pos.y);
+		}else if (pos.x>rightTopCameraBorder.y-sz.x/2){
+			comp.position= new Vector2 (rightTopCameraBorder.y-sz.x/2,pos.y);
 		}
 	}
 }

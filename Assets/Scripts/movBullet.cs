@@ -31,7 +31,7 @@ public class movBullet : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {
-		if (other.name != "ship" && other.name != "Bullet(Clone)") {
+		if (other.name != "Ship" && other.name != "Bullet(Clone)") {
 			float sz = ((CircleCollider2D)other).radius;
 			GameObject ast = Instantiate (Resources.Load("asteroid"), new Vector3(rightBottomCameraBorder.x+sz/2,Random.Range(rightBottomCameraBorder.y+sz/2 ,leftTopCameraBorder.y-sz/2),0),Quaternion.identity) as GameObject;
 			Destroy (other.gameObject);

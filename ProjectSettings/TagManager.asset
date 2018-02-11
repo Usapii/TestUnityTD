@@ -9,6 +9,10 @@ TagManager:
   - Life2
   - Life3
   - Life4
+  - Life5
+  - Life6
+  - Life7
+  - Bullet
   layers:
   - Default
   - TransparentFX

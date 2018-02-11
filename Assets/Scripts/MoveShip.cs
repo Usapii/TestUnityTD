@@ -8,15 +8,18 @@ public class MoveShip : MonoBehaviour {
 	public Vector2 movement;
 	private bool shoot;			//Allow shoot
 	private float shootSpeed;	//Time of reload
+	private playerState  player;
 
 	void Start () {
 		shootSpeed = 0.5f;
 		shoot = true;
+		player = GetComponent<playerState> ();
 	}
 
 
 	void Update () {
-		float inputY = Input.GetAxis ("Vertical");			//Get Direction
+		float inputY = Input.GetAxis ("Vertical");			//Get Direction vert
+		float inputX = Input.GetAxis ("Horizontal");		//Get Direction horiz
 		Vector2 sz = GetComponent<BoxCollider2D> ().size;	//Get Size
 
 		bool sp	= Input.GetKeyDown(KeyCode.Space); 			//Get KeyPressed
@@ -26,22 +29,14 @@ public class MoveShip : MonoBehaviour {
 			this.shoot = false;
 			Invoke ("reload", this.shootSpeed);
 		}
-		movement = new Vector2 (0f, speed.y * inputY);
+		movement = new Vector2 (speed.x * inputX, speed.y * inputY);
 
 		GetComponent<Rigidbody2D> ().velocity = movement;	
 	}
 
-	void onTriggerEnter2D(Collider2D other){
-		if (other.name != "Bullet") {
-			if (GameObject.FindGameObjectWithTag ("life4")) {
-				Destroy (GameObject.FindGameObjectWithTag ("life4"));
-			}else if (GameObject.FindGameObjectWithTag ("life3")) {
-				Destroy (GameObject.FindGameObjectWithTag ("life3"));
-			}else if (GameObject.FindGameObjectWithTag ("life2")) {
-				Destroy (GameObject.FindGameObjectWithTag ("life2"));
-			}else if (GameObject.FindGameObjectWithTag ("life1")) {
-				Destroy (GameObject.FindGameObjectWithTag ("life1"));
-			}
+	void OnTriggerEnter2D(Collider2D other){
+		if (other.tag != "Bullet") {
+			player.Damage (10);
 		}
 	}
 
