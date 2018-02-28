@@ -23,17 +23,15 @@ public class movBullet : MonoBehaviour {
 	void Update () {
 		//float inputY = Input.GetAxis ("Vertical");
 		Vector2 sz= GetComponent<BoxCollider2D>().size;
-		if (GetComponent<Rigidbody2D>().position.x <= rightTopCameraBorder.x-sz.x/2) {
-			GetComponent<Rigidbody2D>().velocity = new Vector2(speed.x,0f );
-		}else{
+		if (GetComponent<Rigidbody2D>().position.x > rightTopCameraBorder.x-sz.x/2 || GetComponent<Rigidbody2D>().position.x < leftTopCameraBorder.x-sz.x/2) {
 			Destroy(gameObject);
+		}else{
+			GetComponent<Rigidbody2D>().velocity = new Vector2(speed.x,0f );
 		}
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {
-		if (other.name != "Ship" && other.name != "Bullet(Clone)") {
-			float sz = ((CircleCollider2D)other).radius;
-			GameObject ast = Instantiate (Resources.Load("asteroid"), new Vector3(rightBottomCameraBorder.x+sz/2,Random.Range(rightBottomCameraBorder.y+sz/2 ,leftTopCameraBorder.y-sz/2),0),Quaternion.identity) as GameObject;
+		if (other.name != "Ship" && other.name != "Bullet(Clone)" && other.tag!="Paryss" && other.tag != "Laser") {
 			Destroy (other.gameObject);
 			Destroy (gameObject);
 		}

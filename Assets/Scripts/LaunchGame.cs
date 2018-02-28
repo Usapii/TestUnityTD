@@ -16,7 +16,6 @@ public class LaunchGame : MonoBehaviour {
 	}
 
 	public void TaskOnClick(){
-		Debug.Log ("TAMER");
 	}
 
 

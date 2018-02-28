@@ -12,15 +12,12 @@ public class moveAsteroid : MonoBehaviour {
 	public Vector3 rightTopCameraBorder;
 	public Vector3 rightBottomCameraBorder;
 
-	// Use this for initialization
 	void Start () {
 		leftTopCameraBorder = Camera.main.ViewportToWorldPoint (new Vector3 (0, 1, 0));
 		rightBottomCameraBorder = Camera.main.ViewportToWorldPoint (new Vector3 (1, 0, 0));
 	}
 
-	// Update is called once per frame
 	void Update () {
-		//float inputY = Input.GetAxis ("Vertical");
 		float sz= GetComponent<CircleCollider2D>().radius;
 
 		if (GetComponent<Rigidbody2D>().position.x >= leftTopCameraBorder.x-sz/2) {

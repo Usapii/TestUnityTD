@@ -5,14 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - asteroid
-  - Life1
-  - Life2
-  - Life3
-  - Life4
-  - Life5
-  - Life6
-  - Life7
   - Bullet
+  - Paryss
+  - Pyrass
+  - comet
+  - Laser
+  - player
   layers:
   - Default
   - TransparentFX
